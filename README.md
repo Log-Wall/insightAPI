@@ -31,35 +31,35 @@ Returns a boolean for affliction on target meeting a provided probability from 0
 
 ```js
 //Target afflictions ['asthma: 0.5', 'clumsiness: 0.5', 'paralysis: 1'];
-insight.hasAff('asthma'); // true
+insight.hasAff({id: 'asthma'}); // true
 
-insight.hasAff('asthma', 0.75); //false
+insight.hasAff({id: 'asthma', probability: 0.75}); //false
 
-insight.hasAff('asthma', 0.25); // true
+insight.hasAff({id: 'asthma', probability: 0.25}); // true
 ```
 ### `hasAnAff({ids, player, probability = 0})`
 Returns a boolean for the presence of any aff listed in the array meeting a provided probability from 0 - 1 for the current target.
 ```js
 //Target afflictions ['asthma: 0.5', 'clumsiness: 0.5', 'paralysis: 1'];
-insight.hasAnAff(['asthma', 'clumsiness']); // true
+insight.hasAnAff({ids: ['asthma', 'clumsiness']}); // true
 
-insight.hasAnAff(['nausea', 'slickness']); // false
+insight.hasAnAff({ids: ['nausea', 'slickness']}); // false
 
-insight.hasAnAff(['asthma', 'paralysis'], 0.75); // true
+insight.hasAnAff({ids: ['asthma', 'paralysis'], probability: 0.75}); // true
 
-insight.hasAnAff(['asthma', 'clumsiness'], 1); // false
+insight.hasAnAff({ids: ['asthma', 'clumsiness'], probability:  1}); // false
 ```
 ### `hasAffs({ids, player, probability = 0})`
 Returns a boolean for the presence of all affs listed in the array meeting a provided probability from 0 - 1 for the current target.
 ```js
 //Target afflictions ['asthma: 0.5', 'clumsiness: 0.5', 'paralysis: 1'];
-insight.hasAffs(['asthma', 'clumsiness']); // true
+insight.hasAffs({ids: ['asthma', 'clumsiness']}); // true
 
-insight.hasAffs(['asthma', 'slickness']); // false
+insight.hasAffs({ids: ['asthma', 'slickness']}); // false
 
-insight.hasAffs(['asthma', 'paralysis'], 1); // false
+insight.hasAffs({ids: ['asthma', 'paralysis'], probability: 1}); // false
 
-insight.hasAffs(['asthma', 'clumsiness'], 0.5); // true
+insight.hasAffs({ids: ['asthma', 'clumsiness'], probability: 0.5}); // true
 ```
 ### `hasDef({id, player})`
 Returns a boolean for the state of a tracked defense on the target.
