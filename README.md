@@ -65,9 +65,9 @@ insight.hasAffs({ids: ['asthma', 'clumsiness'], probability: 0.5}); // true
 Returns a boolean for the state of a tracked defense on the target.
 ```js
 //Target defense rebounding = true, shield = false;
-insight.hasDef('rebounding'); // true
+insight.hasDef({id: 'rebounding'}); // true
 
-insight.hasDef('shield'); // false
+insight.hasDef({id: 'shield'}); // false
 ```
 ### `getStatus({id, player})`
 Returns the stored value of any status variable tracked by **insight** on the current target.
