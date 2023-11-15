@@ -89,6 +89,11 @@ insight.confirmAff({id: 'paralysis', state: false});
 //Target afflictions ['asthma: 1', 'clumsiness: 0.5''];
 ```
 ### `usedCure({id, player})`
+```js
+//Target afflictions: ['asthma: 1', 'clumsiness: 1'];
+insight.usedCure({id: "kelp", player: "Khaseem"});
+//Target afflictions: ['asthma: 0.5', 'clumsiness: 0.5'];
+```
 
 ### `addDef({id, player})`
 
