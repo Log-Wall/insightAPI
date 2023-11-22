@@ -9,7 +9,7 @@ Inisght affliction tracking package.
 Returns an array of afflictions on current target.
 
 ```js
-insight.currentAffs(); // ['asthma', 'paralyis', 'clumsiness'];
+insight.currentAffs(); // ['asthma', 'paralysis', 'clumsiness'];
 
 ```
 ### `currentAffDisplay()`
@@ -23,7 +23,7 @@ insight.currentAffDisplay(); // ['asthma: 0.5', 'clumsiness: 0.5', 'paralysis: 1
 Returns an HTML friendly display of the current affs, including probability.
 
 ```js
-insight.currentAffDisplay(); // ['asthma: 0.5', 'clumsiness: 0.5', 'paralysis: 1'];
+insight.currentAffDisplayHTML(); // ['asthma: 0.5', 'clumsiness: 0.5', 'paralysis: 1'];
 
 ```
 ### `hasAff({id, probability = 0})`
@@ -76,8 +76,6 @@ Returns the stored value of any status variable tracked by **insight** on the cu
 insight.getStatus({id: 'hp'}); // 5000
 ```
 ### `addAff({id, player})`
-### `randomAffs({ids, player})`
-### `smartAffs({ids, player, ordered = false})`
 ### `removeAff({id, player})`
 ### `confirmAff({id, state, player})`
 Used to confirm if a tracked aff is either 1.0 or no longer present; e.g. A target with tacked asthma smoking.
@@ -88,18 +86,26 @@ insight.confirmAff({id: 'asthma', state: true});
 insight.confirmAff({id: 'paralysis', state: false});
 //Target afflictions ['asthma: 1', 'clumsiness: 0.5''];
 ```
+### `confirmAffs({ids, state, player})`
+### `randomAffs({ids, player})`
+### `smartAffs({ids, player, ordered = false})`
+### `convertAff({id, to, player})`
 ### `usedCure({id, player})`
 ```js
 //Target afflictions: ['asthma: 1', 'clumsiness: 1'];
 insight.usedCure({id: "kelp", player: "Khaseem"});
 //Target afflictions: ['asthma: 0.5', 'clumsiness: 0.5'];
 ```
-
+### `hasDef({id, player})`
 ### `addDef({id, player})`
-
 ### `removeDef({id, player})`
 
 ### `setStatus({id, value, player})`
+### `getStatus({id, player})`
+
+### `hasBal({id, player})`
+### `lostBal({id, player})`
+### `balRemaining({id, player})`
 
 ### `setTarget(player)`
 
